@@ -6,19 +6,7 @@
     </types>
     <types>
         <members>*</members>
-        <name>ApexPage</name>
+        <name>AuraDefinitionBundle</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>Activity.Remindatalocation__c</members>
-        <name>CustomField</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>CustomTab</name>
-    </types>
-    <version>36.0</version>
+    <version>34.0</version>
 </Package>
