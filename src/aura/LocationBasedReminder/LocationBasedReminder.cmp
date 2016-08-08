@@ -1,0 +1,67 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" controller="locationbasedActivities">
+    <aura:attribute name="comLat" type="string" />
+    <aura:attribute name="comLong" type="string" />
+    <aura:attribute name="TaskRecords" type="Task" />
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    <aura:handler name="change" value="{!v.comLong}" action="{!c.handleValueChange}"/>   
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+        </head>
+        <body>
+            <div class="slds">              
+                <article class="slds-card slds-card--narrow">
+                    <header class="slds-card__header slds-grid">
+                        <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                            
+                            <div class="slds-media__body slds-truncate">
+                                <h2>
+                                    <a href="javascript:void(0);" class="slds-text-link--reset">
+                                        <span class="slds-text-heading--small">Location based Activities</span>
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="slds-card__body">
+                        <div class="slds-card__body--inner">
+                            <aura:iteration items="{!v.TaskRecords}" var="tsk">  
+                                <div class="slds-tile">
+                                    <div class="slds-tile__detail slds-text-body--small">
+                                        <dl class="slds-dl--horizontal">
+                                            <dt class="slds-dl--horizontal__label">
+                                                <p class="slds-truncate" title="Subject">Subject</p>
+                                            </dt>
+                                            <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                                                <p class="slds-truncate" title="Status">{!tsk.Subject}</p>
+                                            </dd>
+                                            <dt class="slds-dl--horizontal__label">
+                                                <p class="slds-truncate" title="Type">Account</p>
+                                            </dt>
+                                            <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                                                <p class="slds-truncate" title="Status">{!tsk.Account.Name}</p>
+                                            </dd>
+                                            <dt class="slds-dl--horizontal__label">
+                                                <p class="slds-truncate" title="Type">Status</p>
+                                            </dt>
+                                            <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                                                <p class="slds-truncate" title="Status">{!tsk.Status}</p>
+                                            </dd>
+                                            <dt class="slds-dl--horizontal__label">
+                                                <p class="slds-truncate" title="Date">Priority</p>
+                                            </dt>
+                                              <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                                                <p class="slds-truncate" title="Status">{!tsk.Priority}</p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div><br></br>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </body>
+    </html>
+</aura:component>
