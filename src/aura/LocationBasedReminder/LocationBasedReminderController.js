@@ -8,7 +8,6 @@
         }
     },
     handleValueChange : function(component, event, helper) {
-        console.log(component.get("v.comLat"));
         var action = component.get("c.openRecords");
         action.setParams({
             lati : component.get("v.comLat"),
