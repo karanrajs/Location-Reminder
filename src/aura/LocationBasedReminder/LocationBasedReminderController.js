@@ -1,8 +1,6 @@
 ({
     doinit : function(component, event, helper) {
-        console.log('failed');
         if(navigator.geolocation){
-            console.log('failed');
             navigator.geolocation.getCurrentPosition(function(position){     
                 component.set("v.comLat",position.coords.latitude);
                 component.set("v.comLong",position.coords.longitude);
